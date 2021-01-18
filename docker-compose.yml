@@ -1,0 +1,38 @@
+version: "3"
+services:
+  mysql:
+    container_name: ${MYSQL_CONTAINER_NAME}
+    build:
+      context: .
+      dockerfile: ./build/db/mysql/Dockerfile
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${USE_NAME}
+      MYSQL_PASSWORD: ${PASS}
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASS}
+    networks:
+      - default
+
+
+  phpmyadmin:
+    container_name: test_phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+    - 7070:80
+    environment:
+    - PMA_ARBITRARY=1
+    - PMA_HOSTS=${MYSQL_CONTAINER_NAME}:3306
+    - PMA_USER=root
+    - PMA_PASSWORD=${ROOT_PASS}
+    depends_on:
+    - mysql
+    networks:
+      - default
+
+networks:
+  default:
+    external: false
