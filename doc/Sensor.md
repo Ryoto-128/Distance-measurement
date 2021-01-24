@@ -33,7 +33,7 @@
     - pyenv 
       - python version 3.7.9
 
-### Installing / インストール
+### インストール
 
 開発環境の構築方法を以下で説明する。
 

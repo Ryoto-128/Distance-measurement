@@ -56,7 +56,7 @@
         - crypyography
         - Django rest framework jwt
 
-### Installing / インストール
+### インストール
 
 開発環境の構築方法を以下で説明する。
 
