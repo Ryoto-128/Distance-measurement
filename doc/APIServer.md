@@ -106,15 +106,15 @@ localhost:8000/<上記、機能一覧に記載された機能ごとのURL>
 
 #### 登録
 
-![登録](/Users/ryoto/Development/Private/Distance-measurement/doc/img/api_demo1.gif)
+![登録](./img/api_demo1.gif)
 
 #### ログイン
 
-![ログイン](/Users/ryoto/Development/Private/Distance-measurement/doc/img/api_demo2.gif)
+![ログイン](./img/api_demo2.gif)
 
 #### ユーザー情報の取得
 
-![ユーザー情報の取得](/Users/ryoto/Development/Private/Distance-measurement/doc/img/api_demo3.gif)
+![ユーザー情報の取得](./img/api_demo3.gif)
 
 ## デプロイ
 
