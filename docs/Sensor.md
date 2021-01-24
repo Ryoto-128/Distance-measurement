@@ -88,5 +88,5 @@ python main.py
 
 実際に使用している様子をデモとして示す。
 
-![sensor_demo1](/Users/ryoto/Development/Private/Distance-measurement/doc/img/sensor_demo1.gif)
+![sensor_demo1](./img/sensor_demo1.gif)
 
