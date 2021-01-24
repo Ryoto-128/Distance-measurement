@@ -1,121 +1,92 @@
-# APIサーバー
+# センサー
 
 ## はじめに
 
-このREADMEでは、「APIサーバー」の概要を説明させていただきます。</br>各機能のコード説明等は下記リンクをご覧いただけると幸いです。現在開発済みの範囲はセンサーとRestAPIとなっております。Webアプリケーションに関しても随時更新していく予定です。
+このREADMEでは、「センサー」の概要を説明させていただきます。</br>各機能のコード説明等は下記リンクをご覧いただけると幸いです。現在開発済みの範囲はセンサーとRestAPIとなっております。Webアプリケーションに関しても随時更新していく予定です。
 
 - [全体概要](./../README.md)
 
-- [センサー]()
+- [APIサーバー](./APIServer.md)
 
-# Project Title / プロジェクトのタイトル
+## 概要
 
-One Paragraph of project description goes here
-プロジェクトの概要を 1 段落でここに書きます
+### 機能
 
-## Getting Started / スタートガイド
+- 人感センサーの制御
+- アルコール消毒の使用回数（施設訪問者数）のカウント
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-プロジェクトを複製してローカル端末で実行し、開発や検証ができるまでの手順を説明します。実際のシステムにプロジェクトをデプロイする方法については、デプロイの項目を参照してください。
+### 注力した機能・工夫した点
 
-### Prerequisites / 必要条件
+- 通行人などには反応しないよう改良した。
+- 連続使用での誤作動が怒らないように改良した。
 
-What things you need to install the software and how to install them
-プロジェクトを走らせるためにはどんなソフトウェアが必要で、それらをどのようにインストールするか
+## スタートガイド
 
-```
-Give examples
-コマンドで例を示します
-```
+プロジェクトを複製してローカル端末で実行し、開発や検証ができるまでの手順を説明する。実際のシステムにプロジェクトをデプロイする方法については、デプロイの項目に記載する。
+
+### 必要条件
+
+本システムは以下の環境で構築されている。開発や検証を行うためには**pyenv**のインストールが必要となる。
+
+- センサー
+  - Python
+    - pyenv 
+      - python version 3.7.9
 
 ### Installing / インストール
 
-A step by step series of examples that tell you how to get a development env running
-動作する開発環境の構築方法を段階的に例示します
+開発環境の構築方法を以下で説明する。
 
-Say what the step will be
-手順はこんな感じ
+#### githubからクローン
 
 ```
-Give the example
-コマンドで例を示します
+# sshを使用する場合
+git clone git@github.com:Ryoto-128/Distance-measurement.git
+
+# HTTPSを使用する場合
+git clone https://github.com/Ryoto-128/Distance-measurement.git
 ```
 
-And repeat
-それから
+#### Pyenvの設定
 
 ```
-until finished
-終わるまでのコマンドの例を繰り返します
+pyenv local 3.7.9
+pyenv rehash
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-このシステムが出力するデータの例とか、あるいはちょっとしたデモを示して終わります
-
-## Running the tests / テストの実行
-
-Explain how to run the automated tests for this system
-自動テストをどのように実行するかをここで説明します
-
-### Break down into end to end tests / e2e テストまで詳解する場合
-
-Explain what these tests test and why
-何のためのテストでどうしてそれを行うのかを説明します
+#### 作業ディレクトリの移動
 
 ```
-Give an example
-コマンドで例を示します
+cd ./client/sensor
 ```
 
-### And coding style tests / それからコーディングスタイルのテスト
-
-Explain what these tests test and why
-何のためのテストでどうしてそれを行うのかを説明します
+ #### pipenvの設定
 
 ```
-Give an example
-コマンドで例を示します
+# pipfileからのパッケージインストールの場合
+pipenv install
+pipenv shell
+
+# pipfile.lockからのパッケージインストールの場合
+pipenv sync
+pipenv shell
 ```
 
-## Deployment / デプロイ
+#### 作業ディレクトリの移動
 
-Add additional notes about how to deploy this on a live system
-実際のシステムにデプロイするための補足的な説明を行います
+```
+cd ./client/sensor
+```
 
-## Built With / 協働するシステムのリスト
+#### 実行
 
-- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used / 使用した web フレームワーク
-- [Maven](https://maven.apache.org/) - Dependency Management / 依存関係管理ソフトウェア
-- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds / 使用した RSS フィード生成
+```
+python main.py
+```
 
-## Contributing / コントリビューション
+## デモ
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-私たちのコーディング規範とプルリクエストの手順についての詳細は[CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) を参照してください。
+実際に使用している様子をデモとして示す。
 
-## Versioning / バージョン管理
+![sensor_demo1](/Users/ryoto/Development/Private/Distance-measurement/doc/img/sensor_demo1.gif)
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-私たちはバージョン管理に [SemVer](http://semver.org/)を使用しています。利用可能なバージョンは[このリポジトリのタグ](https://github.com/your/project/tags)を参照してください。
-
-## Authors / 著者
-
-- **Billie Thompson** - *Initial work / 原著者* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-このプロジェクトへの貢献者のリストもご覧ください。
-
-## License / ライセンス
-
-This project is licensed under the MIT License - see the [LICENSE.md](https://qiita.com/KamataRyo/items/LICENSE.md) file for details
-このプロジェクトは MIT ライセンスの元にライセンスされています。 詳細は[LICENSE.md](https://qiita.com/KamataRyo/items/LICENSE.md)をご覧ください。
-
-## Acknowledgments / 謝辞
-
-- Hat tip to anyone whose code was used / コードを書いた人への感謝
-- Inspiration / 何からインスピレーションを得たか
-- etc / その他
-
-## Reference
-
-- [良い README.md を書くためのテンプレート（翻訳）](

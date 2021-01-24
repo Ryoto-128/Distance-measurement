@@ -60,6 +60,18 @@
 
 開発環境の構築方法を以下で説明する。
 
+#### githubからクローン
+
+```
+# sshを使用する場合
+git clone git@github.com:Ryoto-128/Distance-measurement.git
+
+# HTTPSを使用する場合
+git clone https://github.com/Ryoto-128/Distance-measurement.git
+```
+
+
+
 #### Docker上のMySQLデータベースの起動
 
 ```
@@ -76,11 +88,11 @@ pyenv rehash
  #### pipenvの設定
 
 ```
-* pipfileからのパッケージインストールの場合
+# pipfileからのパッケージインストールの場合
 pipenv install
 pipenv shell
 
-* pipfile.lockからのパッケージインストールの場合
+# pipfile.lockからのパッケージインストールの場合
 pipenv sync
 pipenv shell
 ```
